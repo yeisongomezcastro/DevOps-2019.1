@@ -39,7 +39,7 @@ settings.gradle . El nombre puede ser algo como "AplicacionReto${Nombre}".
 
 ## Jenkins
 Para este reto se ha habilitado una instancia de jenkins sobre la cual podran crear sus pipelines.
-La URL para este jenkins es: [JENKINS](reto-jenkins.quind.tabcode.tech).
+La URL para este jenkins es: [JENKINS](https://reto-jenkins.quind.tabcode.tech).
 
 En este tambien deberan crear su job de jenkins con un nombre que los identifique
 y deberan crearlo a partir de el job llamado BASE dentro de la carpeta RETO.
@@ -53,7 +53,7 @@ Para ingresar a jenkins debera usar sus credenciales de github.
 
 Para el reto tambien se ha habilitado una instancia de sonarQube la cual se
 encuentra previamente configurada en nuestro ambiente de jenkins con el nombre de `sonarQube`.
-Pueden acceder aqui a [SONARQUBE](reto-sonarqube.quind.tabcode.tech).
+Pueden acceder aqui a [SONARQUBE](https://reto-sonarqube.quind.tabcode.tech).
 
 ## Recursos Utiles
 
