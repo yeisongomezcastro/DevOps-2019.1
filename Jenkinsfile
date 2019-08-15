@@ -1,6 +1,9 @@
 pipeline {
 
     agent any
+	environment {
+		PROJECT_PATH_BACK = './'
+	}
 
     stages {
           stage ('Unit Tests') {
