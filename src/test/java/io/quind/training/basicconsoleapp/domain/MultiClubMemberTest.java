@@ -8,19 +8,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MultiClubMemberTest {
 
-    @DisplayName("Should return return correct to string value")
+ @DisplayName("Should return return correct to string value")
     @ParameterizedTest(name = "{index} => memberID = {0}, memberType = {1}, name = {2}, fees = {3}, club = {4}")
     @CsvSource({
-            "1, M, Name1, 100, 1000",
-            "2, M, Name2, 300, 2000",
-            "3, M, Name3, 200, 3000"
+            "1, S, Name1, 100, 1",
+            "2, S, Name2, 300, 2",
+            "3, S, Name3, 200, 3"
     })
-    void testToString(int memberID, char memberType, String name, double fees, int membershipPoints) {
-    	
-	   MultiClubMember member = new MultiClubMember(memberID, memberType, name, fees,club);
-	    String expected = String.format("%s, %s, %s, %.1f, %s", memberID, memberType, name, fees) + "," + club;
-	    assertEquals(expected, member.toString());
-        
+    void testToString(int memberID, char memberType, String name, double fees, int club) {
+        SingleClubMember member = new SingleClubMember(memberID, memberType, name, fees, club);
+        String expected = String.format("%s, %s, %s, %.1f, %s", memberID, memberType, name, fees, club);
+        assertEquals(expected, member.toString());
     }
     @DisplayName("test getter and setter")
     @ParameterizedTest(name = "{index} => memberID = {0}, memberType = {1}, name = {2}, fees = {3}, club = {4}")
