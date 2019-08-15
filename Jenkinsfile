@@ -18,7 +18,7 @@ pipeline {
            steps{
 		 def scannerHome = tool 'SonarScanner 4.0';
     		withSonarQubeEnv('sonarQube') { 
-      		sh "${scannerHome}/bin/sonar-scanner
+      		sh "./gradlew ${scannerHome}/bin/sonar-scanner"
 	   }
         }
 
