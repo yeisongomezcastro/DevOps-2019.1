@@ -4,23 +4,20 @@ pipeline {
 
     stages {
           stage ('Unit Tests') {
-            parallel {
-			stage('Test'){
+		  parallel {
 			steps {
 			echo '------------>test<------------'
 			sh './gradlew --stacktrace test'
 
-			}
 		}
 	    }
         }
 
         stage ('SonarCloud Static Code Analysis') {
            steps{
-		echo '------------>Static Code Analysis<------------'
- 		 withSonarQubeEnv(sonarqube) {
-		      sh './gradlew sonarqube'
-		  }
+		withSonarQubeEnv('sonarQube') {
+                     sh "./${tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties"
+                     }
 	   }
         }
 
