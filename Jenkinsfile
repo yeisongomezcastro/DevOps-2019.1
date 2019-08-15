@@ -5,13 +5,9 @@ pipeline {
 
     stages {
           stage ('Unit Tests') {
-		  parallel {
-		stage('test'){
 			steps {
 			echo '------------>test<------------'
 			sh './gradlew clean test'
-			}
-		}
 	    }
         }
 
