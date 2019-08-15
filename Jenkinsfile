@@ -16,9 +16,9 @@ pipeline {
 
         stage ('SonarCloud Static Code Analysis') {
            steps{
-		withSonarQubeEnv('sonarQube') {
-                     sh "./${tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties"
-                     }
+		 def scannerHome = tool 'SonarScanner 4.0';
+    		withSonarQubeEnv('sonarQube') { 
+      		sh "${scannerHome}/bin/sonar-scanner
 	   }
         }
 
