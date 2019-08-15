@@ -8,19 +8,23 @@ pipeline {
 		stage('test'){
 			steps {
 			echo '------------>test<------------'
+			dir("${PROJECT_PATH_BACK}")
 			sh './gradlew --stacktrace test'
 			}
 		}
 	    }
         }
 
-        stage ('SonarCloud Static Code Analysis') {
-           steps{
-		 def scannerHome = tool 'SonarScanner 4.0';
-    		withSonarQubeEnv('sonarQube') { 
-      		sh "./gradlew ${scannerHome}/bin/sonar-scanner"
-	   }
-        }
+    
+             stage ('SonarCloud Static Code Analysis') {
+            steps{
+               echo '------------>SonarCloud Static Code Analysis<------------'
+               withSonarQubeEnv('sonarQube') {
+                   sh './gradlew sonarqube'
+               }
+           }
+       }
+        
 
         stage ('SonarCloud Quality Gate') {
             steps {
