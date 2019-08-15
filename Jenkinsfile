@@ -3,8 +3,14 @@ pipeline {
     agent any
 
     stages {
-        stage ('Unit Tests') {
-            //Inserte su declaracion aqui
+          stage ('Unit Tests') {
+            parallel {
+			stage('Test'){
+			steps {
+			echo '------------>test<------------'
+			sh './gradlew --stacktrace test'
+
+			}
         }
 
         stage ('SonarCloud Static Code Analysis') {
