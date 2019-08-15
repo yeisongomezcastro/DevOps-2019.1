@@ -43,5 +43,8 @@ test {
 }
 
 jar {
-//missing
+    manifest {
+    attributes( 'Main-Class': 'io.quind.training.basicconsoleapp.BasicConsoleApp' )
+    }
+}
 }
