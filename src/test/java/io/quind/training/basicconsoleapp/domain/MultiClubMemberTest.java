@@ -17,7 +17,7 @@ class MultiClubMemberTest {
     })
     void testToString(int memberID, char memberType, String name, double fees, int membershipPoints) {
     	
-	    SingleClubMember member = new SingleClubMember(memberID, memberType, name, fees, club);
+	   MultiClubMember member = new MultiClubMember(memberID, memberType, name, fees,club);
 	    String expected = String.format("%s, %s, %s, %.1f, %s", memberID, memberType, name, fees) + "," + club;
 	    assertEquals(expected, member.toString());
         
