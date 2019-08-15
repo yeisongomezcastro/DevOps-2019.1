@@ -18,10 +18,9 @@ pipeline {
         stage ('SonarCloud Static Code Analysis') {
            steps{
 		echo '------------>Static Code Analysis<------------'
- 		withSonarQubeEnv('Sonar') {
-                     sh "${tool name: 'sonarQube', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties"
-                     }
-		}
+ 		 withSonarQubeEnv(sonarqube) {
+		      sh './gradlew sonarqube'
+		  }
         }
 
         stage ('SonarCloud Quality Gate') {
