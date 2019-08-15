@@ -23,8 +23,6 @@ class MultiClubMemberTest {
     	String result = member.toString();
     	
     	assertEquals(result,"");
-    	
-    }
     }
     @DisplayName("test getter and setter")
     @ParameterizedTest(name = "{index} => memberID = {0}, memberType = {1}, name = {2}, fees = {3}, club = {4}")
