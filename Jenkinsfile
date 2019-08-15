@@ -11,6 +11,8 @@ pipeline {
 			sh './gradlew --stacktrace test'
 
 			}
+		}
+	    }
         }
 
         stage ('SonarCloud Static Code Analysis') {
