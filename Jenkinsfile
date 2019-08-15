@@ -21,6 +21,7 @@ pipeline {
  		 withSonarQubeEnv(sonarqube) {
 		      sh './gradlew sonarqube'
 		  }
+	   }
         }
 
         stage ('SonarCloud Quality Gate') {
