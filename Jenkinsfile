@@ -1,9 +1,7 @@
 pipeline {
 
     agent any
-	environment {
-		PROJECT_PATH_BACK = './'
-	}
+	
 
     stages {
           stage ('Unit Tests') {
@@ -11,7 +9,6 @@ pipeline {
 		stage('test'){
 			steps {
 			echo '------------>test<------------'
-			dir("${PROJECT_PATH_BACK}")
 			sh './gradlew --stacktrace test'
 			}
 		}
