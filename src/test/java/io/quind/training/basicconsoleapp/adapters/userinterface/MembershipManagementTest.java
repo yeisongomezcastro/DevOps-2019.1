@@ -42,7 +42,6 @@ class MembershipManagementTest {
     void getChoice(int in) {
         int expected = in;
         when(mockedReader.nextInt()).thenReturn(in);
-        int result = mm.getChoice();
         String result = mm.addMembers(buildList());
         assertEquals(expected,result);
 
